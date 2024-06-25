@@ -1,0 +1,27 @@
+List of mostly common used bash commands in Unix:
+
+    cd      | change dir, used to move around system thru bash
+    ls      | list, shows files/directories where u are
+    pwd     | print working dir
+    mkdir   | make dir
+    touch   | create a file
+    mv      | move/rename
+    cp      | copy
+    rm      | remove file
+    rm -rf  | remove folder, with force
+    echo    | sends a string to terminal (using ">" u can redirect it to file)
+    ls -la  | a shows hidden files, l shows as long list
+
+    chmod   | give permission
+        chmod +x %filename%    | gives eXecutable permission
+        chmod 777 %filename%   | gives all permissions
+
+    ps -aux     | shows processess PID
+    kill %PID%  | stops a process by its PID
+
+    sleep  | delay, in seconds
+
+    apt-get update  | apt list update
+    apt-get install | install an app
+    grep  | u know man, SimpleBashUtils and all that~
+    cat   | read a text from file (or files)
