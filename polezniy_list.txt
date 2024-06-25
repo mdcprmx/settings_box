@@ -1,0 +1,77 @@
+_______________________________________________________________________________________
+################
+#   valgrind   #
+
+valgrind --leak-check=full \            | for memory leak detection
+         --show-leak-kinds=all \        | what kinds of leaks to show
+         --track-origins=yes \          | tracks origins of unitialized values, bruh
+         --verbose \                    | be more verbose, bruh
+         --log-file=valgrind-out.txt \  | easier to just use ">" operator
+
+example:
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./a.out
+
+_______________________________________________________________________________________
+#################
+#  clang format #
+
+[i - for fixing] [n - for checking]
+
+clang-format -style=Google -i *.c *.h
+clang-format -style=Google -n *.c *.h
+
+string to copy cf file:
+    cp -f ../materials/linters/.clang-format .
+
+_______________________________________________________________________________________
+###########
+#   gcc   #
+
+what kind of flags there are for GCC?
+
+- Usual flags (warning flags)
+    -Wall      | enables all warning messages
+    -Wextra    | enables extra warning flags
+    -Werror    | treats warnings as errors
+    -pedantic  | strict demanding flag
+
+    moar usual flags:
+        -std=c99    | 1999 standard
+        -std=c11    | 2011 standard (we usually use this one)
+        -c          | produce only compiled code
+        -g          | debug flag, useful in development
+        -v          | be more verbose
+        -fsanitize=address  | memory detection tool; overflows/underflows,free,return errors
+        -fsanitize=leak     | memory leaks detection
+        
+- Optimization flags
+    -0O        | no optimization
+    -01        | minimal optimization
+    -02        | default optimization level
+    -03        | even more optimized
+    -0fast     | enables 03, plus more
+
+_______________________________________________________________________________________
+
+
+
+################
+#  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
