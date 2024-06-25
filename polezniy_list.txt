@@ -38,9 +38,10 @@ what kind of flags there are for GCC?
     moar usual flags:
         -std=c99    | 1999 standard
         -std=c11    | 2011 standard (we usually use this one)
-        -c          | produce only compiled code
+        -c          | produce only compiled code, ignore linking phase
         -g          | debug flag, useful in development
         -v          | be more verbose
+        -o          | output as %file_name%
         -fsanitize=address  | memory detection tool; overflows/underflows,free,return errors
         -fsanitize=leak     | memory leaks detection
         
@@ -51,27 +52,7 @@ what kind of flags there are for GCC?
     -03        | even more optimized
     -0fast     | enables 03, plus more
 
+example:
+    gcc -Wall -Wextra -Werror -pedantic -std=c11 -g -fsanitize=address -fsanitize=leak src.c -o zapuskator.out
+
 _______________________________________________________________________________________
-
-
-
-################
-#  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
