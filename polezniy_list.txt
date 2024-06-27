@@ -43,6 +43,14 @@ what kind of flags there are for GCC?
         -v          | be more verbose
         -o          | output as %file_name%
 
+    lib flags:
+        -lcheck     | adds "Check" lib for unit testing
+        -pthread    | multithread support, more consistent than -lpthreads
+        -lm         | math lib
+        -lrt        | real time lib, for some functions
+        -lsubunit   | subunit lib, for tests written in different language/framework
+        -lgcov      | gcov lib, allows to generate coverage info
+
     sanitize flags:
         -fsanitize=address  | memory detection tool; overflows/underflows,free,return errors
         -fsanitize=leak     | memory leaks detection
