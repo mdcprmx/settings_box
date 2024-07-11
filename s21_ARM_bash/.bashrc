@@ -1,3 +1,4 @@
+## custom bash look, added in 2024 march
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -47,8 +48,21 @@ function parse_git_dirty {
 
 export PS1="\[\e[37;45m\]@\[\e[m\]\u[\A] [\w]\[\e[30;47m\]\`parse_git_branch\`\[\e[m\]\[\e[37;45m\]@\[\e[m\] "
 
-#shortcuts for apps
+## aliases, added in 2024 june
 alias dol='dolphin'
 alias spec='spectacle'
 alias oracle='virtualbox'
 
+## git add, commit, push; added in 2024 july
+# usage:
+#	- gacp %commit message%
+#		- yeah, it even reads and understands spaces. Noice innit, m8? 
+git_add_commit_push() {
+    git add -A
+    git commit -m "$*"
+    git push
+}
+alias gacp=git_add_commit_push
+
+# git status alias
+alias gs="git status"
