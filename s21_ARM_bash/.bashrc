@@ -66,3 +66,10 @@ alias gacp=git_add_commit_push
 
 # git status alias
 alias gs="git status"
+
+# git set upstream
+alias gsetdev="git push --set-upstream origin develop"
+
+
+
+
