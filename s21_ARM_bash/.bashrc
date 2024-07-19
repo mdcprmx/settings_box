@@ -1,3 +1,16 @@
+###################################
+#  List of all aliases: 
+#	gacp %msg%   | git add -A, git commit %msg%, git push
+#	gsetdev      | git push --set-upstream origin develop
+#	gs           | git status
+#	stylecheck   | clang-format -style=Google -n *.c *.h
+#	stylefix     | clang-format -style=Google -i *.c *.h
+#
+#	[dol - dolphin] [spec - spectacle] [oracle - oracle VM manager]
+###################################
+
+
+
 ## custom bash look, added in 2024 march
 # get current branch in git repo
 function parse_git_branch() {
@@ -54,21 +67,51 @@ alias spec='spectacle'
 alias oracle='virtualbox'
 
 ## git add, commit, push; added in 2024 july
-# usage:
-#	- gacp %commit message%
-#		- yeah, it even reads and understands spaces. Noice innit, m8? 
 git_add_commit_push() {
     git add -A
     git commit -m "$*"
     git push
 }
 alias gacp=git_add_commit_push
-
-# git status alias
+#gacp %commit message%
 alias gs="git status"
-
-# git set upstream
 alias gsetdev="git push --set-upstream origin develop"
+
+
+## clang-format aliases, added 19 july 2024 
+clang_style_Google_check() {
+echo "clang-format style=Google -n *.c *.h" 
+clang-format style=Google -n *.c *.h 
+}
+alias stylecheck=clang_style_Google_check
+
+clang_style_Google_fix() {
+echo "clang-format style=Google -i *.c *.h" 
+clang-format style=Google -i *.c *.h 
+}
+alias stylefix=clang_style_Google_fix
+
+## valgrind memory leaks check, added 19 july 2024
+memtest_valgrind() {
+	echo "valgrind --tool=memcheck --leak-check=yes ./"$*""
+	valgrind --tool=memcheck --leak-check=yes ./"$*"
+}
+alias valcheck="memtest_valgrind"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
