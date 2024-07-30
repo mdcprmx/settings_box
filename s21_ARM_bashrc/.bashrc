@@ -2,9 +2,10 @@
 #  List of all aliases: 
 #	gacp %msg%   | git add -A, git commit %msg%, git push
 #	gsetdev      | git push --set-upstream origin develop
-#	gs           | git status
+#	gs           | git pull, git status
 #	stylecheck   | clang-format -style=Google -n *.c *.h
 #	stylefix     | clang-format -style=Google -i *.c *.h
+#	valcheck %   | valgrind --tool=memcheck --leak-check=yes ./"$*"
 #
 #	[dol - dolphin] [spec - spectacle] [oracle - oracle VM manager]
 ###################################
@@ -74,7 +75,12 @@ git_add_commit_push() {
 }
 alias gacp=git_add_commit_push
 #gacp %commit message%
-alias gs="git status"
+git_pull_and_status() {
+	git status
+	git pull
+	git status
+}
+alias gs=git_pull_and_status
 alias gsetdev="git push --set-upstream origin develop"
 
 
