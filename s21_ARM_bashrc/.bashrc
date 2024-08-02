@@ -5,6 +5,7 @@
 #	gs           | git pull, git status
 #	stylecheck   | clang-format -style=Google -n *.c *.h
 #	stylefix     | clang-format -style=Google -i *.c *.h
+#	c            | clear
 #	valcheck %   | valgrind --tool=memcheck --leak-check=yes ./"$*"
 #
 #	[dol - dolphin] [spec - spectacle] [oracle - oracle VM manager]
@@ -75,6 +76,7 @@ git_add_commit_push() {
 }
 alias gacp=git_add_commit_push
 #gacp %commit message%
+
 git_pull_and_status() {
 	git status
 	git pull
@@ -104,21 +106,7 @@ memtest_valgrind() {
 }
 alias valcheck="memtest_valgrind"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## clear alias, added 1 august 2024
+alias c='clear'
 
 
