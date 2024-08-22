@@ -1,0 +1,6 @@
+https://www.netrunner.com/download/
+
+# to get this repo use:
+git clone https://github.com/mdcprmx/settings_box.git
+
+# then, to use sh script to copy .bashrc
