@@ -88,13 +88,13 @@ alias gsetdev="git push --set-upstream origin develop"
 
 ## clang-format aliases, added 19 july 2024 
 clang_style_Google_check() {
-echo "clang-format style=Google -n *.c *.h" 
+echo "clang-format -style=Google -n *.c *.h" 
 clang-format -style=Google -n *.c *.h 
 }
 alias stylecheck=clang_style_Google_check
 
 clang_style_Google_fix() {
-echo "clang-format style=Google -i *.c *.h" 
+echo "clang-format -style=Google -i *.c *.h" 
 clang-format -style=Google -i *.c *.h 
 }
 alias stylefix=clang_style_Google_fix
