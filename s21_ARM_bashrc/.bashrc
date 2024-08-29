@@ -7,6 +7,7 @@
 #	stylefix     | clang-format -style=Google -i *.c *.h
 #	c            | clear
 #	valcheck %   | valgrind --tool=memcheck --leak-check=yes ./"$*"
+#   openrepo     | open repository in firefox browser
 #
 #	[dol - dolphin] [spec - spectacle] [oracle - oracle VM manager]
 ###################################
@@ -108,5 +109,25 @@ alias valcheck="memtest_valgrind"
 
 ## clear alias, added 1 august 2024
 alias c='clear'
+
+## open git repo url
+alias gitopen='firefox "$(git config --get remote.origin.url | sed "s/git@github\.com:/https:\/\/github.com\//")"'
+alias gitlab-open='git config --get remote.origin.url | sed -e "s/git@/https:/g" -e "s/:/\//g" -e "s/.git$//" | open firefox'
+
+git_open_repo_in_browser() {
+	if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+		echo "Error: not in a git repo bruh."
+		return 1
+	fi
+	check=$(git config --get remote.origin.url)
+
+
+	# using sed we format gotten string. u can run this command without sed to understand how it works~
+	URL=$(git config --get remote.origin.url | sed -e 's/ssh/https/g' -e 's/git@repos-https.21-school.ru:2289\//repos.21-school.ru\//' -e 's/.git//')
+	firefox "$URL" &>/dev/null &
+}
+
+
+alias openrepo=git_open_repo_in_browser
 
 
