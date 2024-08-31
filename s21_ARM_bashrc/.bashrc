@@ -12,8 +12,6 @@
 #	[dol - dolphin] [spec - spectacle] [oracle - oracle VM manager]
 ###################################
 
-
-
 ## custom bash look, added in 2024 march
 # get current branch in git repo
 function parse_git_branch() {
@@ -63,6 +61,7 @@ function parse_git_dirty {
 }
 
 export PS1="\[\e[37;45m\]@\[\e[m\]\u[\A] [\w]\[\e[30;47m\]\`parse_git_branch\`\[\e[m\]\[\e[37;45m\]@\[\e[m\] "
+
 
 ## aliases, added in 2024 june
 alias dol='dolphin'
