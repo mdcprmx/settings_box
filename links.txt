@@ -1,2 +1,0 @@
-site where u can learn regular expressions:
-https://regexr.com
