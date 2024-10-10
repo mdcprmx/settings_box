@@ -1,7 +1,8 @@
 soo what do u need to install for C plus plus on Ubuntu/Lubuntu/Kubuntu?
 sudo apt install gcc
 sudo apt install make
-sudo apt install clang-format 
+sudo apt install clang-format
+sudo apt install lcov
 sudo apt install g++
 sudo apt install libgtest-dev
 
