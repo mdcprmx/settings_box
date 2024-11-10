@@ -1,3 +1,4 @@
+
 ###################################
 #  List of all aliases: 
 #	gacp %msg%   | git add -A, git commit %msg%, git push
@@ -108,6 +109,7 @@ alias valcheck="memtest_valgrind"
 
 ## clear alias, added 1 august 2024
 alias c='clear'
+alias gorl='clear'
 
 ## open git repo url, added 29 august 2024
 git_open_repo_in_browser() {
@@ -120,7 +122,7 @@ git_open_repo_in_browser() {
 
 	# using sed we format gotten string. u can run this command without sed to understand how it works~
 	URL=$(git config --get remote.origin.url | sed -e 's/ssh/https/g' -e 's/git@repos-https.21-school.ru:2289\//repos.21-school.ru\//' -e 's/.git//' | sed -e 's/hub.com/github.com/')
-	firefox "$URL" &>/dev/null &
+	open "$URL" &>/dev/null &
 }
 alias openrepo=git_open_repo_in_browser
 
